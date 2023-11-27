@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Contador de Calorias</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">NutricionistaApp</h1>
+    </header>
+    <div class="container">
+        <main>
+            <div class="cadastro" style="display: none;">
+                <h1 class="titulo">Registro</h1>
+                <form action="" class="formulario">
+                    <div>
+                        <label class="label" for="nome">Nome:</label>
+                        <input type="text" id="nome" class="nome validar" >
+                    </div>
+
+                    <div>
+                        <label class="label" for="sobrenome">Sobrenome:</label>
+                    <input type="text" id="sobrenome" class="sobrenome validar">
+                    </div>
+
+                    <div>
+                        <label class="label" for="email">Email:</label>
+                    <input type="text" id="email" class="email validar">
+                    </div>
+
+                    <div>
+                        <label class="label senha" for="senha">Senha:</label>
+                    <input type="password" id="senha" class="senha validar">
+                    </div>
+    
+                    <button type="submit" class="btn">Cadastra-se</button>
+                </form>
+                <button class="cadastre-se" id="btn-voltar-login">Voltar para Login</button>
+            </div>
+
+
+            <div class="login">
+                <h1 class="titulo">Login</h1>
+                <form class="areaLogin">
+                    <div>
+                        <label class="label" for="email">Email:</label>
+                        <input class="input" type="email" name="email" placeholder="Email" required>
+                    </div>
+
+                    <div>
+                        <label class="label" for="senha">Senha:</label>
+                        <input class="input validar" type="password" name="senha" placeholder="Senha" required>
+                    </div>
+                </form>
+                <button class="btn" type="submit">Login</button>
+                <button class="cadastre-se" id="btn-cadastro">Cadastre-se</button>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; Todos os direitos reservados</p>
+    </footer>
+
+    <script src="js/login.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var btnCadastro = document.getElementById("btn-cadastro");
+            var btnVoltarLogin = document.getElementById("btn-voltar-login");
+            var formCadastro = document.querySelector(".cadastro");
+            var formLogin = document.querySelector(".login");
+
+            btnCadastro.addEventListener("click", function () {
+                formCadastro.style.display = "block";
+                formLogin.style.display = "none";
+            });
+
+            btnVoltarLogin.addEventListener("click", function () {
+                formCadastro.style.display = "none";
+                formLogin.style.display = "block";
+            });
+        });
+    </script>
